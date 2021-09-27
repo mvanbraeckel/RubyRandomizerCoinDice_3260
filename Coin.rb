@@ -31,27 +31,32 @@ class Coin < Randomizer
     # Default constructor for a Coin object (i.e. `Coin.new(denomination)`)
     def initialize(denomination)
         @item = :coin
-        @randomize_count = 0
         @result = nil
+        @randomize_count = 0
         raise ArgumentError, "Denomination '#{denomination}' is invalid - must be one of: #{DENOMINATIONS}" unless DENOMINATIONS.include?(denomination)
         @denomination = denomination
     end
 
     # Overridden method that both randomizes and returns the Coin itself (for method chaining)
     def randomize
+        self.flip
+    end
+
+    # Flips the Coin and returns the "flipped" Coin (for method chaining) (synonym of Coin randomize())
+    def flip
         @randomize_count += 1
         @result = rand(2) == 0 ? :T : :H
         self
     end
 
-    # Flips the Coin and returns the "flipped" Coin (for method chaining) (synonym of Coin randomize())
-    def flip
-        self.randomize
-    end
-
-    # Returns `:H` or `:T` (the result of the last flip) or nil (if no flips yet done) (synonym of result())
+    # Returns `:H` or `:T` (the result of the last flip) or nil (if no flips yet done) (synonym of result() / up())
     def sideup
         self.result
+    end
+
+    # Returns the up of the Coin randomization (synonym of sideup() for matching valid 'description' formats)
+    def up
+        self.sideup
     end
 
     # Overriden method that returns the numerical value of the Coin flip result

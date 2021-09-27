@@ -31,8 +31,8 @@ class Die < Randomizer
     # Default constructor for a Die object (i.e. `Die.new(sides, colour)`)
     def initialize(sides, colour)
         @item = :die
-        @randomize_count = 0
         @result = nil
+        @randomize_count = 0
         raise ArgumentError, "Sides '#{sides}' is invalid - must be an integer of 1 or greater." unless sides.is_a?(Integer) && sides > 0
         @sides = sides
         raise ArgumentError, "Colour '#{colour}' is invalid - must be one of: #{COLOURS}." unless COLOURS.include?(colour)
@@ -41,19 +41,24 @@ class Die < Randomizer
 
     # Overridden method that both randomizes and returns the Die itself (for method chaining)
     def randomize
+        self.roll
+    end
+
+    # Rolls the Die and returns the "rolled" die (for method chaining) (synonym of Die randomize())
+    def roll
         @randomize_count += 1
         @result = 1 + rand(@sides)
         self
     end
 
-    # Rolls the Die and returns the "rolled" die (for method chaining) (synonym of Die randomize())
-    def roll
-        self.randomize
-    end
-
     # Returns 1..sides (inclusive) (the result of the last roll) or nil (if no rolls yet done) (synonym of result())
     def sideup
         self.result
+    end
+
+    # Returns the up of the Coin randomization (synonym of sideup() for matching valid 'description' formats)
+    def up
+        self.sideup
     end
 
     # # Returns if the given Die is equal to self

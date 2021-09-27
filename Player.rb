@@ -92,10 +92,10 @@ class Player
         end
     end
 
-    # # Returns a Bag clone of the Player's Bag (so it isn't connected by reference, thus not breaking encapsulation)
-    # def bag
-    #     @bag.clone
-    # end
+    # Returns a Bag clone of the Player's Bag (so it isn't connected by reference, thus not breaking encapsulation)
+    def bag
+        @bag.clone
+    end
 
     # # Returns a Cup clone of the Player's Cup (so it isn't connected by reference, thus not breaking encapsulation)
     # def cup

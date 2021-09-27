@@ -43,7 +43,7 @@ class Randomizer
         @randomize_count = 0
     end
 
-    # Returns the up of the randomization (synonym of result() that matches valid 'description' formats)
+    # Returns the up of the randomization (synonym of result() for matching valid 'description' formats)
     def up
         self.result
     end
