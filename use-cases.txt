@@ -1,0 +1,48 @@
+-----------------------------------------------
+Course: CIS*3260: Software Design IV | A1: Ruby
+Name: Mitchell Van Braeckel
+Student Number: 1002297
+Email: mvanbrae@uoguelph.ca
+Due Date: September 27, 2021
+Professor: Mark Wineberg
+Language: Ruby
+-----------------------------------------------
+
+===============================================
+USE CASE #1 : D&D "Backstabber" Attack
+===============================================
+Primary Actor: Dirk Deacon, D&D Player
+Goal: Makes a melee attack from behind a creature while hidden
+Initiating Event:
+- Dirk is playing D&D
+- Dirk has exactly 1 coin, 3d20, and 1d8 in his bag
+- Dirk's cup, which he uses for coin flips and die rolls, is empty
+- Dirk's character is hiding successful without being noticed
+- Dirk's character melee attacks the target from behind
+- Dirk's character's melee attack does 1d8 damage
+Main Success Scenario:
+- Dirk's character possesses at least one use left of its homebrew Backstabber Feat
+- Dirk chooses to activate his homebrew Backstabber Feat for the melee attack from behind while hidden
+- Dirk removes his 1 coin from his bag and adds it to his cup in preparation to use as part of the Backstabber feat attack roll
+- Dirk removes 3d20 from his bag and adds it to his cup in preparation to use as part of the Backstabber feat attack roll
+- Dirk throws the contents of his cup to make the attack roll, making note of the throw's results
+- Dirk then puts the 1 coin and 3d20 back into his bag
+- Dirk removes 1d8 from his bag and adds it to his cup in preparation to use as part of the damage roll
+- Dirk throws the contents of his cup to make the damage roll, making note of the throw's results
+- Dirk then puts the 1d8 back into his bag
+Post Conditions:
+- Dirk has a total of 2 separate cup throw-rolls
+- Dirk has flipped 1 coin
+- Dirk has rolled 3d20 dice
+- Dirk has rolled 1d8 dice
+- Dirk's cup is empty
+- Dirk's bag once again contains the 1 coin, 3d20, and 1d8
+Alternate Flows or Exceptions / Scenario Notes:
+- If the coin flip is heads, the attack hits regardless of the "special advantage" 3d20 attack roll
+- If the coin flip is tails and the "special advantage" 3d20 attack roll still misses, the 1d8 damage roll is halved (rounded down)
+- If any of the 3d20s are a natural 20, the 1d8 damage roll is doubled
+
+===============================================
+USE CASE #2 : Bag of lost coins leads to buying a lottery ticket
+===============================================
+- finds a bag of coins, counts the sum, if > X, he'll buy a lottery ticket with it
