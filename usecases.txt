@@ -85,6 +85,6 @@ Post Conditions:
 - Sasuke counts up the total result of his dice battle throw
 - Naruto's and Sasuke's total results are compared to see who had the higher result and won
 Alternate Flows or Exceptions / Scenario Notes:
-- If Sasuke wins, he has to let Sasuke give him the "One Thousand Years of Death" special move
+- If Sasuke wins, Naruto has to let Sasuke give him the "One Thousand Years of Death" special move
 - If Naruto wins, Sasuke has to take him out to lunch and buy him 3 bowls of his favourite "Ichiraku Ramen"
 - If there's a tie, they stay silent awkwardly for a few minutes as they figure out what to do about this situation
