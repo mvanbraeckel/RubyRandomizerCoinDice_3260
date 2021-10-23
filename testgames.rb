@@ -194,9 +194,9 @@ end
 
 # Runs the test harness and all tests
 def main_test_harness
-    self.test__dnd_backstabber_attack
-    self.test__bag_of_lost_coins_leads_to_lottery_ticket
-    self.test__dice_battle__naruto_vs_sasuke
+    test__dnd_backstabber_attack
+    test__bag_of_lost_coins_leads_to_lottery_ticket
+    test__dice_battle__naruto_vs_sasuke
 end
 
 # ==================== MAIN ====================
