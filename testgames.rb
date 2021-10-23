@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 # Course: CIS*3260: Software Design IV | A1: Ruby
 # Name: Mitchell Van Braeckel
 # Student Number: 1002297
