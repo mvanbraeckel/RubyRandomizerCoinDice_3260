@@ -64,13 +64,13 @@ class Bag < RandomizerContainer
         h
     end
 
-    # # Returns if the given Bag is equal to self
-    # def ==(o)
-    #     o.is_a?(Bag) && super
-    # end
+    # Returns if the given Bag is equal to self
+    def ==(o)
+        o.is_a?(Bag) && super
+    end
 
-    # # Returns a Bag clone with copies of all its randomizers
-    # def clone
-    #     Bag.new.copy_all(self)
-    # end
+    # Returns a Bag clone with copies of all its randomizers
+    def clone
+        Bag.new.copy_all(self)
+    end
 end

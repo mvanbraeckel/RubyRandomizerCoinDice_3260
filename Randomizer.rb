@@ -57,4 +57,14 @@ class Randomizer
     # def to_s
     #     "Item=#{@item}, Randomize Count=#{@randomize_count}, Result=#{@result}"
     # end
+
+    # Returns a string to print to show physical attribute info of an item
+    def print_item
+        "Item=#{@item}"
+    end
+
+    # Returns a description hash of an item
+    def item_description
+        "{item:#{@item}}"
+    end
 end

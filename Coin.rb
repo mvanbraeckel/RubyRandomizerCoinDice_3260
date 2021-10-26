@@ -75,4 +75,14 @@ class Coin < Randomizer
     # def to_s
     #     "#{super}, Denomination=#{@denomination}"
     # end
+
+    # Returns a string to print to show physical attribute info of the Coin
+    def print_item
+        "#{super}, Denomination=#{@denomination}"
+    end
+
+    # Returns a description hash of the Coin
+    def item_description
+        "{item:#{@item}, denomination:#{@denomination}}"
+    end
 end

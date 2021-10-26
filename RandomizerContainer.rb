@@ -49,10 +49,10 @@ class RandomizerContainer
         @randomizers.clone
     end
 
-    # # Returns if the given RandomizerContainer is equal to self
-    # def ==(o)
-    #     o.is_a?(RandomizerContainer) && self.randomizers.sort == o.randomizers.sort
-    # end
+    # Returns if the given RandomizerContainer is equal to self
+    def ==(o)
+        o.is_a?(RandomizerContainer) && self.randomizers.sort == o.randomizers.sort
+    end
 
     # # Returns a RandomizerContainer clone with copies of all its randomizers
     # def clone
@@ -67,4 +67,22 @@ class RandomizerContainer
     #     end
     #     to_print.strip
     # end
+
+    # Returns a string to print that shows physical attribute info of all items
+    def print_items
+        to_print = ""
+        @randomizers.each do |r|
+            to_print += "#{r.print_item}\n"
+        end
+        to_print.strip
+    end
+
+    # Returns a description hash of all items
+    def items_description
+        to_print = "["
+        @randomizers.each do |r|
+            to_print += "#{r.item_description},"
+        end
+        to_print = to_print.chomp(',') + "]"
+    end
 end

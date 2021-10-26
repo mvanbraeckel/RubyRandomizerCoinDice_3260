@@ -47,9 +47,12 @@ class Player
 
     # Throws the (previously loaded) Cup, and replaces the items in the Cup to the Bag
     # NOTE: the Throw is both returned and stored internally
+    # NOTE: also returns the throw externally for easy use
     def throw
-        @throws.unshift(@cup.throw)
+        thrown_cup = @cup.throw
+        @throws.unshift(thrown_cup)
         self.move_all(@cup.empty)
+        thrown_cup
     end
 
     # Clears all stored Throws

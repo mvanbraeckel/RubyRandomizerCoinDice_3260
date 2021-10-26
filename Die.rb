@@ -70,4 +70,14 @@ class Die < Randomizer
     # def to_s
     #     "#{super}, Sides=#{@sides}, Colour=#{@colour}"
     # end
+
+    # Returns a string to print to show physical attribute info of the Die
+    def print_item
+        "#{super}, Sides=#{@sides}, Colour=#{@colour}"
+    end
+
+    # Returns a description hash of the Die
+    def item_description
+        "{item:#{@item}, sides:#{@sides}, colour:#{@colour}}"
+    end
 end
