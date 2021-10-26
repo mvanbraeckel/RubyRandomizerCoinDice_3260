@@ -190,6 +190,24 @@ def test__dice_battle__naruto_vs_sasuke
     puts res_5 != nil ? "--PASS--" : "--FAIL--"
 end
 
+def test__bag_cloning
+    # Init necessary objects
+    p1 = Player.new("p1")
+    cpu = Player.new("cpu")
+
+    # Both ready their dice and coin
+    p1.store(Die.new(100, Die::COLOURS.sample))
+    p1.store(Die.new(20, Die::COLOURS.sample))
+    p1.store(Die.new(6, Die::COLOURS.sample))
+    p1.store(Coin.new(Coin::DENOMINATIONS.sample))
+
+    p1_bag_clone = p1.bag # Clone of p1 bag with same item contents
+    cpu.move_all(p1_bag_clone)
+
+    puts "p1 bag:\n#{p1.bag.print_items}"
+    puts "cpu bag:\n#{cpu.bag.print_items}"
+end
+
 # ============== MAIN TEST HARNESS ==============
 
 # Runs the test harness and all tests
@@ -197,6 +215,8 @@ def main_test_harness
     test__dnd_backstabber_attack
     test__bag_of_lost_coins_leads_to_lottery_ticket
     test__dice_battle__naruto_vs_sasuke
+
+    test__bag_cloning
 end
 
 # ==================== MAIN ====================
