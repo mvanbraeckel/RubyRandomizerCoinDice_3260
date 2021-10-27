@@ -204,8 +204,28 @@ def test__bag_cloning
     p1_bag_clone = p1.bag # Clone of p1 bag with same item contents
     cpu.move_all(p1_bag_clone)
 
+    puts "\n=========== Bag Cloning ===========\n\n"
     puts "p1 bag:\n#{p1.bag.print_items}"
     puts "cpu bag:\n#{cpu.bag.print_items}"
+end
+
+def test__rc_randomizers_cloning
+    # Init necessary objects
+    p1 = Player.new("p1")
+
+    # Both ready their dice and coin
+    p1.store(Die.new(100, Die::COLOURS.sample))
+    p1.store(Coin.new(Coin::DENOMINATIONS.sample))
+
+    p1_bag_clone = p1.bag # Clone of p1 bag with same item contents
+    p1_items = p1.bag.randomizers
+    p1_popped_item = p1_items.pop
+
+    puts "\n===== RC Randomizers Cloning =====\n\n"
+    puts "p1 bag:\n#{p1.bag.print_items}"
+    puts "p1 bag items:\t\t#{p1.bag.randomizers}"
+    puts "p1 bag cloned items:\t#{p1_items}"
+    puts "p1 bag cloned items pop:\t#{p1_popped_item.print_item}"
 end
 
 # ============== MAIN TEST HARNESS ==============
@@ -216,7 +236,9 @@ def main_test_harness
     test__bag_of_lost_coins_leads_to_lottery_ticket
     test__dice_battle__naruto_vs_sasuke
 
+    puts "\n----- Extra Testing -----\n\n"
     test__bag_cloning
+    test__rc_randomizers_cloning
 end
 
 # ==================== MAIN ====================
