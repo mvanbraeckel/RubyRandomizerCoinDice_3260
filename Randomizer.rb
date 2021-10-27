@@ -58,6 +58,11 @@ class Randomizer
     #     "Item=#{@item}, Randomize Count=#{@randomize_count}, Result=#{@result}"
     # end
 
+    # # Returns a Randomizer physical clone (but it doesn't have any physical attributes)
+    # def physical_clone
+    #     Randomizer.new()
+    # end
+
     # Returns a string to print to show physical attribute info of an item
     def print_item
         "Item=#{@item}"

@@ -190,6 +190,8 @@ def test__dice_battle__naruto_vs_sasuke
     puts res_5 != nil ? "--PASS--" : "--FAIL--"
 end
 
+# ================ EXTRA TESTING ================
+
 def test__bag_cloning
     # Init necessary objects
     p1 = Player.new("p1")
@@ -228,7 +230,45 @@ def test__rc_randomizers_cloning
     puts "p1 bag cloned items pop:\t#{p1_popped_item.print_item}"
 end
 
-# ============== MAIN TEST HARNESS ==============
+def test__random_select_and_add_items_from_player1_to_player2
+    # Init necessary objects
+    p1 = Player.new("p1")
+    p2 = Player.new("p2")
+
+    # Both ready their dice and coin
+    p1.store(Die.new(100, Die::COLOURS.sample))
+    p1.store(Die.new(20, Die::COLOURS.sample))
+    p1.store(Die.new(6, Die::COLOURS.sample))
+    p1.store(Coin.new(Coin::DENOMINATIONS.sample))
+
+    p2_bag = p1.bag
+
+    p2_bag.randomizers.each do |item|
+        if rand(2) == 1
+            p2.store(item.clone)
+            next
+        end
+    end
+
+    p1.load({item: :die})
+    p1.throw
+    p2.load
+    p2.throw
+
+    puts "\n===== Random Select+AddItems from P1 bag to P2 bag =====\n\n"
+    puts "p1 bag:\n#{p1.bag.print_items}"
+    puts "p1 bag items:\t\t#{p1.bag.randomizers}"
+    puts "p2 bag:\n#{p2.bag.print_items}"
+    puts "p2 bag items:\t\t#{p2.bag.randomizers}"
+    puts "p1 (die) results:\n#{p1.results({item: :die})}"
+    puts "p2 (die) results:\n#{p2.results({item: :die})}"
+    puts "p1:\n#{p1.bag.items_description}"
+    puts "p2:\n#{p2.bag.items_description}"
+end
+
+# ===============================================
+# -------------- MAIN TEST HARNESS --------------
+# ===============================================
 
 # Runs the test harness and all tests
 def main_test_harness
@@ -239,6 +279,7 @@ def main_test_harness
     puts "\n----- Extra Testing -----\n\n"
     test__bag_cloning
     test__rc_randomizers_cloning
+    test__random_select_and_add_items_from_player1_to_player2
 end
 
 # ==================== MAIN ====================
