@@ -1,12 +1,12 @@
 # RubyRandomizerCoinDice_3260
 
-Course: CIS*3260: Software Design IV | A1: Ruby
-Name: Mitchell Van Braeckel
-Student Number: 1002297
-Email: mvanbrae@uoguelph.ca
-Due Date: September 27, 2021
-Professor: Mark Wineberg
-Language: Ruby
+- Course: CIS*3260: Software Design IV | A1: Ruby
+- Name: Mitchell Van Braeckel
+- Student Number: 1002297
+- Email: mvanbrae@uoguelph.ca
+- Due Date: September 27, 2021
+- Professor: Mark Wineberg
+- Language: Ruby
 
 ## A Game of Coins and Dice feat. Bags, Cups, and Hands
 
